@@ -8,7 +8,6 @@ import org.springframework.data.jpa.repository.Query;
 
 import java.util.List;
 
-public interface BookStoreRepository extends JpaRepository<Book,Long>
-{
+public interface BookStoreRepository extends JpaRepository<Book, Long> {
 
 }

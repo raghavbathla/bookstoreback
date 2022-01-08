@@ -5,12 +5,12 @@ import com.example.bookstore.dto.BookDto;
 import javax.persistence.*;
 
 @Entity
-@Table(name="book_store")
+@Table(name = "book_store")
 public class Book {
 
-@Id
-@GeneratedValue(strategy = GenerationType.AUTO)
-@Column(name = "id")
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    @Column(name = "id")
     private Long id;
     private String image;
     private String price;
@@ -23,7 +23,8 @@ public class Book {
 
     }
 
-    public Book() {}
+    public Book() {
+    }
 
     public String getImage() {
         return image;

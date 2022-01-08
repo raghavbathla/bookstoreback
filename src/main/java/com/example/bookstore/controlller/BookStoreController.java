@@ -3,8 +3,11 @@ package com.example.bookstore.controlller;
 
 import com.example.bookstore.dto.BookDto;
 import com.example.bookstore.dto.CartDto;
+import com.example.bookstore.dto.DetailsDto;
 import com.example.bookstore.dto.ResponseDto;
 import com.example.bookstore.model.Book;
+import com.example.bookstore.model.Cart;
+import com.example.bookstore.model.Details;
 import com.example.bookstore.service.BookStoreService;
 import com.example.bookstore.service.Iservice;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -53,5 +56,15 @@ public class BookStoreController {
         return new ResponseEntity<String>("Deleted", HttpStatus.OK) ;
     }
 
+@PostMapping("/customerdetails")
+    public ResponseEntity<ResponseDto> addDetails(DetailsDto detailsDto){
+        bookStoreService.addDetails(detailsDto);
+        return new ResponseEntity<ResponseDto>(new ResponseDto("Updated Data Successfully",detailsDto),HttpStatus.OK);
+}
 
+@PostMapping("/allcartvalues")
+    public ResponseEntity<ResponseDto> allCartsValue(){
+    List<Cart> cartList = bookStoreService.getAllCartValue();
+    return new ResponseEntity<ResponseDto>(new ResponseDto("Success", cartList), HttpStatus.OK);
+}
 }

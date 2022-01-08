@@ -2,10 +2,10 @@ package com.example.bookstore.dto;
 
 
 public class CartDto {
-private String image;
-private String price;
-private String author;
-private String quantity;
+    private String image;
+    private String price;
+    private String author;
+    private String quantity;
 
     public CartDto(String image, String price, String author, String quantity) {
         this.image = image;

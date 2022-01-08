@@ -1,6 +1,8 @@
 package com.example.bookstore.model;
 
 
+import com.example.bookstore.dto.DetailsDto;
+
 import javax.persistence.*;
 
 @Entity
@@ -19,7 +21,7 @@ public class Details {
     private String landmark;
     private String type;
 
-    public Details(Details dto) {
+    public Details(DetailsDto dto) {
         this.pincode = dto.getPincode();
         this.name = dto.getName();
         this.phoneNumber = dto.getPhoneNumber();
@@ -32,6 +34,7 @@ public class Details {
     public Details() {
 
     }
+
 
     public String getPincode() {
         return pincode;

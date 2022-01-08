@@ -2,10 +2,13 @@ package com.example.bookstore.service;
 
 import com.example.bookstore.dto.BookDto;
 import com.example.bookstore.dto.CartDto;
+import com.example.bookstore.dto.DetailsDto;
 import com.example.bookstore.model.Book;
 import com.example.bookstore.model.Cart;
+import com.example.bookstore.model.Details;
 import com.example.bookstore.repository.BookStoreRepository;
 import com.example.bookstore.repository.CartRepository;
+import com.example.bookstore.repository.DetailsRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -21,6 +24,8 @@ public class BookStoreService implements Iservice {
     @Autowired
     private CartRepository cartRepository;
 
+    @Autowired
+    private DetailsRepository detailsRepository;
 
     @Override
     public Book addData(BookDto bookDto) {
@@ -57,6 +62,12 @@ public class BookStoreService implements Iservice {
     @Override
     public void deleteAllDataFromCart() {
         cartRepository.deleteAllDataFromCart();
+    }
+
+    @Override
+    public Details addDetails(DetailsDto detailsDto) {
+        Details details = new Details(detailsDto);
+        return detailsRepository.save(details);
     }
 
 

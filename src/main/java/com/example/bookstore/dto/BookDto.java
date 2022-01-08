@@ -4,11 +4,11 @@ package com.example.bookstore.dto;
 import lombok.Data;
 
 public class BookDto {
-private String image;
-private String price;
-private String author;
+    private String image;
+    private String price;
+    private String author;
 
-    public BookDto(String image, String price,String author) {
+    public BookDto(String image, String price, String author) {
         this.image = image;
         this.price = price;
         this.author = author;

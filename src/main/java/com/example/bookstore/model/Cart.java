@@ -6,12 +6,12 @@ import com.example.bookstore.dto.CartDto;
 import javax.persistence.*;
 
 @Entity
-@Table(name="cart")
+@Table(name = "cart")
 public class Cart {
 
-@Id
-@GeneratedValue(strategy = GenerationType.AUTO)
-@Column(name = "id")
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    @Column(name = "id")
     private Long id;
     private String image;
     private String price;

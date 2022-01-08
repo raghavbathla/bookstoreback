@@ -6,9 +6,8 @@ import org.springframework.data.jpa.repository.Query;
 
 import java.util.List;
 
-public interface CartRepository extends JpaRepository<Cart,Long>
-{
-    @Query(value = "TRUNCATE TABLE cart;",nativeQuery = true)
-void deleteAllDataFromCart();
+public interface CartRepository extends JpaRepository<Cart, Long> {
+    @Query(value = "TRUNCATE TABLE cart;", nativeQuery = true)
+    void deleteAllDataFromCart();
 
 }
